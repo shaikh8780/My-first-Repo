@@ -1,0 +1,41 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfplan
+.terraform.lock.hcl
+
+# Node
+node_modules/
+dist/
+build/
+.env.local
+
+# Playwright
+test-results/
+playwright-report/
+.playwright/
+# Screenshot capture output for the walkthrough deck (regenerated on demand)
+frontend/e2e/shots/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Docker
+.docker/
+
+# Secrets
+.env
+*.pem
+*.key
+customer-inputs/

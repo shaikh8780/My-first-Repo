@@ -1,0 +1,5 @@
+bucket         = "<state-bucket>"
+key            = "esg-authoring-studio/terraform.tfstate"
+region         = "us-east-1"
+dynamodb_table = "<lock-table>"
+encrypt        = true

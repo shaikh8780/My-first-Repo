@@ -1,0 +1,9 @@
+# Dev/test-only dependencies for the backend (not shipped in the container).
+# Install alongside requirements.txt to run the pytest suite:
+#   pip install -r requirements.txt -r requirements-dev.txt
+-r requirements.txt
+pytest>=8.3.0
+moto[dynamodb]>=5.0.0
+# Build-only: scripts/build_kb_corpus.py extracts PDF text into kb_corpus.json.
+# NOT a backend runtime dependency (the corpus JSON is committed and shipped).
+pypdf>=6.0.0

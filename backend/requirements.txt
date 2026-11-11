@@ -1,0 +1,21 @@
+# ---------------------------------------------------------------------------
+# Runtime dependencies for the FastAPI backend.
+#
+# Version floors are intentionally close to current releases so newly-
+# provisioned repos don't start life with known CVEs. pip will resolve
+# the newest compatible versions at build time.
+#
+# JWT: we use PyJWT[crypto] — python-jose is abandoned and has unpatched
+# CVEs (CVE-2024-33663, CVE-2024-33664). Do not reintroduce it.
+# ---------------------------------------------------------------------------
+fastapi>=0.120.0
+uvicorn[standard]>=0.33.0
+PyJWT[crypto]>=2.15.0
+httpx>=0.28.0
+boto3>=1.42.0
+
+# Security floors for transitive dependencies (ProtoShield scan, 27 Oct 2026):
+# anyio < 4.14.2 (CVE-2026-63374, TLS host name encoding) and certifi before
+# 2026.10.19 (bundled emSign roots with compromised intermediate CA keys).
+anyio>=4.14.2
+certifi>=2026.10.19
